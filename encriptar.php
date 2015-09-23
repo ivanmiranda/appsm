@@ -12,6 +12,6 @@
 # Ejecución del framework
 # -----------------------
 
-require_once './Frame/_base.php';
+require_once './Sfphp/_base.php';
 $config = Sfphp_Config::get();
 echo Sfphp::encrypt(trim($_GET['s']),$config['app']['key']);
