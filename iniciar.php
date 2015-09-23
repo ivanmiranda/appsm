@@ -13,16 +13,15 @@
 # y un archivo de configuración con los parametros obligados
 # -----------------------
 
-require_once './Frame/_base.php';
+require_once './Sfphp/_base.php';
 
 if(!file_exists("./Etc/Config/config.xml")) {
 	echo "Inicializando el framework...<br>";
-	file_put_contents("./sfphp.md5", Frame_Disco::MD5("./Framework"));
+	file_put_contents("./sfphp.md5", Sfphp_Disco::MD5("./Sfphp"));
 	echo "Inicializando directorios...<br>";
 	if(!is_dir("./App")) {
 		mkdir("./App", 0775);
-		mkdir("./App/Base", 0775);
-		mkdir("./App/Local", 0775);
+		mkdir("./App/Core", 0775);
 		file_put_contents("./App/.htaccess", "Options -Indexes");
 	}
 	if(!is_dir("./Libs"))
@@ -78,7 +77,7 @@ if(!file_exists("./Etc/Config/config.xml")) {
 			'showphperrors' => 0,
 		),
 	);
-	if(Frame_Disco::arregloXML($_config,"config","./Etc/Config/config.xml"))
+	if(Sfphp_Disco::arregloXML($_config,"config","./Etc/Config/config.xml"))
 		echo 'Configuración básica completa.';
 	else
 		echo 'Hubo un error al escribir la configuración.';
