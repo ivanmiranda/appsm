@@ -1,0 +1,3 @@
+*.sh
+/Etc/Logs/*
+/Etc/Sesiones/*
